@@ -10,12 +10,12 @@ const testnetRPCLength = config.app.pingakshaRPC.length // total testnet rpcs
 const testnetMaxRetries = 2 * testnetRPCLength // max testnet retries
 
 function getVersionDetails(isMainnet) {
- return {
-      polygonRPC: isMainnet?config.app.maticRPC:config.app.mumbaiRPC,
-      ramaRPC: isMainnet?config.app.ramaRPC:config.app.pingakshaRPC,
-      maxRetries: isMainnet?mainnetMaxRetries:testnetMaxRetries,
-      rpcLength: isMainnet?mainnetRPCLength:testnetRPCLength
-    }
+  return {
+    polygonRPC: isMainnet ? config.app.maticRPC : config.app.mumbaiRPC,
+    ramaRPC: isMainnet ? config.app.ramaRPC : config.app.pingakshaRPC,
+    maxRetries: isMainnet ? mainnetMaxRetries : testnetMaxRetries,
+    rpcLength: isMainnet ? mainnetRPCLength : testnetRPCLength
+  }
 }
 
 /**
@@ -47,7 +47,6 @@ export async function isBlockIncluded(blockNumber, isMainnet, version) {
       ).then((ramaClient) => {
         return ramaClient.exitUtil.rootChain
       })
-      
       // check last child block included
       const lastChildBlock = await rootChain.getLastChildBlock()
       if (parseInt(lastChildBlock) >= parseInt(blockNumber)) {
@@ -57,13 +56,11 @@ export async function isBlockIncluded(blockNumber, isMainnet, version) {
           .then((result) => {
             return convert(result)
           })
-
         const headerBlock = await rootChain
           .method('headerBlocks', headerBlockNumber)
           .then((method) => {
             return method.read()
           })
-
         result = {
           headerBlockNumber,
           blockNumber,

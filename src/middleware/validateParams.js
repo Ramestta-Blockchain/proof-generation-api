@@ -122,7 +122,7 @@ export default {
         errMsg: 'Something went wrong while validating params'
       })
     }
-  },
+  }
 
 }
 

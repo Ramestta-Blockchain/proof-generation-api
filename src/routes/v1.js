@@ -17,7 +17,7 @@ const router = express.Router({
  *    parameters:
  *     - name: network
  *       in: path
- *       description: Enter network. Must either be 'rama' for mainnet or 'pingaksha' for testnet 
+ *       description: Enter network. Must either be 'rama' for mainnet or 'pingaksha' for testnet
  *       required: true
  *     - name: blockNumber
  *       in: path
@@ -51,7 +51,7 @@ router.get(
  *    parameters:
  *     - name: network
  *       in: path
- *       description: Enter network. Must either be 'rama' for mainnet or 'pingaksha' for testnet 
+ *       description: Enter network. Must either be 'rama' for mainnet or 'pingaksha' for testnet
  *       required: true
  *     - name: start
  *       in: query
@@ -91,7 +91,7 @@ router.get(
  *    parameters:
  *     - name: network
  *       in: path
- *       description: Enter network. Must either be 'rama' for mainnet or 'pingaksha' for testnet 
+ *       description: Enter network. Must either be 'rama' for mainnet or 'pingaksha' for testnet
  *       required: true
  *     - name: burnTxHash
  *       in: path
@@ -133,7 +133,7 @@ router.get(
  *    parameters:
  *     - name: network
  *       in: path
- *       description: Enter network. Must either be 'rama' for mainnet or 'pingaksha' for testnet 
+ *       description: Enter network. Must either be 'rama' for mainnet or 'pingaksha' for testnet
  *       required: true
  *     - name: burnTxHash
  *       in: path

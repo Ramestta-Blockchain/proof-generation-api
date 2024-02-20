@@ -10,7 +10,7 @@ export default {
     maticRPC: JSON.parse(process.env.MATIC_RPC),
     mumbaiRPC: JSON.parse(process.env.MUMBAI_RPC),
     ramaRPC: JSON.parse(process.env.RAMESTTA_RPC),
-    pingakshaRPC: JSON.parse(process.env.PINGAKSHA_RPC),
+    pingakshaRPC: JSON.parse(process.env.PINGAKSHA_RPC)
   },
   debug: debug,
   mainnetRpcIndex: 0,
