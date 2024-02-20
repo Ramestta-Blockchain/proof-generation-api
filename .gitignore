@@ -1,0 +1,12 @@
+node_modules/
+build/
+*.log
+.DS_Store
+.vscode
+log
+*.env
+pids/
+*.rdb
+config.yml
+report.*.*.*
+.github/workflows/
