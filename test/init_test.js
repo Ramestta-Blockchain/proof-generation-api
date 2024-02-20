@@ -27,7 +27,7 @@ describe('Proof Generation API Tests', () => {
   it('block inclusion test', (done) => {
     chai
       .request(baseUrl)
-      .get('/api/v1/matic/block-included/1234')
+      .get('/api/v1/rama/block-included/1234')
       .end(function(err, res) {
         if (err) {
           console.log(err)
@@ -41,7 +41,7 @@ describe('Proof Generation API Tests', () => {
   it('block non inclusion test', (done) => {
     chai
       .request(baseUrl)
-      .get('/api/v1/matic/block-included/999999999999999')
+      .get('/api/v1/rama/block-included/999999999999999')
       .end(function(err, res) {
         if (err) {
           console.log(err)
@@ -55,7 +55,7 @@ describe('Proof Generation API Tests', () => {
   it('invalid block number test', (done) => {
     chai
       .request(baseUrl)
-      .get('/api/v1/matic/block-included/12324.56')
+      .get('/api/v1/rama/block-included/12324.56')
       .end(function(err, res) {
         if (err) {
           console.log(err)
@@ -72,7 +72,7 @@ describe('Proof Generation API Tests', () => {
   it('merkle proof generation test', (done) => {
     chai
       .request(baseUrl)
-      .get('/api/v1/matic/fast-merkle-proof?start=12345&end=12347&number=12346')
+      .get('/api/v1/rama/fast-merkle-proof?start=12345&end=12347&number=12346')
       .end(function(err, res) {
         if (err) {
           console.log(err)
@@ -89,7 +89,7 @@ describe('Proof Generation API Tests', () => {
     chai
       .request(baseUrl)
       .get(
-        '/api/v1/matic/fast-merkle-proof?start=12345.54&end=12347&number=12346'
+        '/api/v1/rama/fast-merkle-proof?start=12345.54&end=12347&number=12346'
       )
       .end(function(err, res) {
         if (err) {
@@ -104,7 +104,7 @@ describe('Proof Generation API Tests', () => {
   it('invalid merkle proof generation arguments test - 2', (done) => {
     chai
       .request(baseUrl)
-      .get('/api/v1/matic/fast-merkle-proof?start=12345&end=12347&number=12348')
+      .get('/api/v1/rama/fast-merkle-proof?start=12345&end=12347&number=12348')
       .end(function(err, res) {
         if (err) {
           console.log(err)
@@ -118,7 +118,7 @@ describe('Proof Generation API Tests', () => {
   it('invalid merkle proof generation arguments test - 3', (done) => {
     chai
       .request(baseUrl)
-      .get('/api/v1/matic/fast-merkle-proof?start=12348&end=12347&number=12347')
+      .get('/api/v1/rama/fast-merkle-proof?start=12348&end=12347&number=12347')
       .end(function(err, res) {
         if (err) {
           console.log(err)
@@ -136,7 +136,7 @@ describe('Proof Generation API Tests', () => {
     chai
       .request(baseUrl)
       .get(
-        '/api/v1/matic/exit-payload/0x1a7b6aba7e51344474d4fe722a3969e8c7a863c72329210a0dda80d26c4234b4?eventSignature=0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef'
+        '/api/v1/rama/exit-payload/0x1a7b6aba7e51344474d4fe722a3969e8c7a863c72329210a0dda80d26c4234b4?eventSignature=0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef'
       )
       .end(function(err, res) {
         if (err) {
@@ -154,7 +154,7 @@ describe('Proof Generation API Tests', () => {
     chai
       .request(baseUrl)
       .get(
-        '/api/v1/matic/exit-payload/0x1a7b6aba7e51344474d4fe722a3969e8c7a863c72329210a0dda80d26c4234b4?eventSignature=0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef&tokenIndex=0'
+        '/api/v1/rama/exit-payload/0x1a7b6aba7e51344474d4fe722a3969e8c7a863c72329210a0dda80d26c4234b4?eventSignature=0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef&tokenIndex=0'
       )
       .end(function(err, res) {
         if (err) {
@@ -172,7 +172,7 @@ describe('Proof Generation API Tests', () => {
     chai
       .request(baseUrl)
       .get(
-        '/api/v1/matic/exit-payload/272ce652e562677a0db65f95d0c0dc1dd11ef6b2099f09acdaf9b831b51f6804?eventSignature=0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef'
+        '/api/v1/rama/exit-payload/272ce652e562677a0db65f95d0c0dc1dd11ef6b2099f09acdaf9b831b51f6804?eventSignature=0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef'
       )
       .end(function(err, res) {
         if (err) {
@@ -188,7 +188,7 @@ describe('Proof Generation API Tests', () => {
     chai
       .request(baseUrl)
       .get(
-        '/api/v1/matic/exit-payload/0x272ce652e562?eventSignature=0xdf252ad1be2c89b69c2b068fc378daa95'
+        '/api/v1/rama/exit-payload/0x272ce652e562?eventSignature=0xdf252ad1be2c89b69c2b068fc378daa95'
       )
       .end(function(err, res) {
         if (err) {
@@ -204,7 +204,7 @@ describe('Proof Generation API Tests', () => {
     chai
       .request(baseUrl)
       .get(
-        '/api/v1/matic/exit-payload/0x1a7b6aba7e51344474d4fe722a3969e8c7a863c72329210a0dda80d26c4234b4?eventSignature=0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef&tokenIndex=1'
+        '/api/v1/rama/exit-payload/0x1a7b6aba7e51344474d4fe722a3969e8c7a863c72329210a0dda80d26c4234b4?eventSignature=0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef&tokenIndex=1'
       )
       .end(function(err, res) {
         if (err) {
@@ -220,7 +220,7 @@ describe('Proof Generation API Tests', () => {
     chai
       .request(baseUrl)
       .get(
-        '/api/v1/matic/exit-payload/0x4d4a9ee49a681a97ade92788f2fdce1d1761978ab491c2a10eb6849101cd63fe?eventSignature=0x4a39dc06d4c0dbc64b70af90fd698a233a518aa5d07e595d983b8c0526c8f7fb'
+        '/api/v1/rama/exit-payload/0x4d4a9ee49a681a97ade92788f2fdce1d1761978ab491c2a10eb6849101cd63fe?eventSignature=0x4a39dc06d4c0dbc64b70af90fd698a233a518aa5d07e595d983b8c0526c8f7fb'
       )
       .end(function(err, res) {
         if (err) {
